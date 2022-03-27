@@ -1,0 +1,43 @@
+public class Gen<T,V,M>{
+    T ob1;
+    V ob2;
+    M ob3;
+  Gen(T o1,V o2,M o3){
+    ob1=o1;
+    ob2=o2;
+    ob3=o3;
+    }
+    
+   void showTypes(){
+        System.out.println("T is of type"+ob1.getClass().getName());
+        System.out.println("V is of type"+ob2.getClass().getName());
+        System.out.println("M is of type"+ob3.getClass().getName());
+    }
+    
+    T getob1()
+    {
+        return ob1;
+    }
+    V getob2()
+    {
+        return ob2;
+    }
+    
+    M getob3() 
+    {
+        return ob3;
+    }
+}
+
+class GenericsDemo{
+    public static void main(String args[]){
+    Gen<Integer,String,Double>iob=new Gen<Integer,String,Double>(80,"Generics practice", 7.77);
+    iob.showTypes();
+    int v =iob.getob1();
+    System.out.println("Value:"+v);
+    String str=iob.getob2();
+    System.out.println("Value:"+str);
+    double d=iob.getob3();
+    System.out.println("Value:"+d);
+    }   
+}
